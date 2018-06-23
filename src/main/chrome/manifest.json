@@ -1,0 +1,27 @@
+{
+  "name": "Injecta",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Injecting stuff",
+  "homepage_url": "http://danharper.me",
+  "background": {
+    "scripts": [
+      "jquery.min.js","background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [ {
+    "js": [ "jquery.min.js","inject.js"],
+    "matches" : [ "http://*/*", "https://*/*" ,"http://localserver:8080/*"]
+  }],
+  "browser_action": {},
+  
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "http://localhost:8080/*",
+    "tabs"
+  ],
+  
+  "web_accessible_resources":["inject.js"]
+}
